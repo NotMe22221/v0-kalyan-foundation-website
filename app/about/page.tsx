@@ -22,25 +22,24 @@ export default function AboutPage() {
         <div className="relative z-10 fluid-container py-40">
           <div className="max-w-4xl">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
-              Who We Are
+              Our Mission
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">
-              Empowering change,
-              <span className="block text-primary">one life at a time</span>
+              Making sure no child gets left behind
             </h1>
             <p className="text-xl text-muted-foreground font-serif leading-relaxed max-w-2xl mb-12">
-              A youth-led, registered non-profit rooted in Purulia, dedicated to bringing education, nourishment,
-              dignity, and possibility to children and families who have long lived on the margins of opportunity.
+              Kalyan Foundation is a small, dedicated team working in rural West Bengal to give tribal children the
+              education, food, and hope they deserve.
             </p>
             <div className="flex flex-wrap gap-8">
               <div>
                 <p className="text-4xl font-bold text-primary">2022</p>
-                <p className="text-muted-foreground text-sm mt-1">Founded</p>
+                <p className="text-muted-foreground text-sm mt-1">When We Started</p>
               </div>
               <div className="w-px bg-border" />
               <div>
                 <p className="text-xl font-bold text-foreground">190200084</p>
-                <p className="text-muted-foreground text-sm mt-1">Registration No.</p>
+                <p className="text-muted-foreground text-sm mt-1">Registered NGO</p>
               </div>
               <div className="w-px bg-border" />
               <div>
@@ -58,24 +57,25 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <span className="text-primary font-medium text-sm uppercase tracking-wider">Founder's Letter</span>
+                <span className="text-primary font-medium text-sm uppercase tracking-wider">Meet Kaira</span>
                 <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-8 leading-tight">
-                  A responsibility born of love
+                  The 14-year-old who decided to change things
                 </h2>
               </div>
               <div className="space-y-6 font-serif text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  I grew up watching Purulia through a different lens — not just as my home, but as a place where
-                  potential remained hidden beneath hardship. The Santhal and Munda children I met along the way carried
-                  dreams far larger than the circumstances they were born into.
+                  Kaira grew up in Purulia. She watched children in her neighborhood skip school because they were
+                  hungry. She saw girls stop studying because they were expected to stay home. She couldn't unsee it, so
+                  she decided to act.
                 </p>
                 <blockquote className="border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-2xl italic">
-                  "Starting Kalyan Foundation was not a choice as much as it was a responsibility born out of love for
-                  my hometown."
+                  "I realized that the only thing standing between these kids and their dreams was someone saying 'yes,
+                  you can.' I decided to be that someone."
                 </blockquote>
                 <p>
-                  Every child we teach, every meal we serve, every small smile we witness reinforces a belief that has
-                  guided us from the beginning: the world is not equal, but compassion can build its bridges.
+                  At 14, Kaira started with almost nothing — just determination and a small group of supporters. Today,
+                  Kalyan Foundation has taught over 50 children, served thousands of meals, and changed the trajectory
+                  of entire families.
                 </p>
               </div>
               <p className="text-foreground font-semibold">— Kaira Ghosh, Founder</p>
@@ -91,10 +91,10 @@ export default function AboutPage() {
       <section className="py-32 bg-background">
         <div className="fluid-container">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">The Context</span>
-            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Purulia: The Reality</h2>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">The Challenge</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Why Purulia Needs Help</h2>
             <p className="text-xl text-muted-foreground font-serif">
-              We live on the same planet — just in two different worlds.
+              Children shouldn't have to choose between school and survival.
             </p>
           </div>
 
@@ -104,23 +104,27 @@ export default function AboutPage() {
             </div>
             <div className="space-y-8">
               <p className="text-lg text-muted-foreground font-serif leading-relaxed">
-                The Ajodhya Hills region, where we work, is geographically stunning yet profoundly underserved. Roads
-                cut sharply through forests and rocky slopes, leaving villages isolated from basic services.
+                Purulia is a beautiful place with rich forests and vibrant tribal communities. But it's also one of
+                India's most forgotten regions. Roads are tough. Hospitals are far away. Schools exist, but teachers
+                often don't show up, and many families can't afford to send their kids.
               </p>
               <Card className="border-0 shadow-xl bg-gradient-to-br from-primary/5 to-primary/10">
                 <CardContent className="p-8">
-                  <p className="text-muted-foreground mb-2">In Ajodhya village, literacy averages</p>
-                  <p className="text-6xl font-bold text-primary">41.63%</p>
+                  <p className="text-muted-foreground mb-2">
+                    In villages near us, only about 1 in 3 people can read. And for girls? It's even worse.
+                  </p>
+                  <p className="text-6xl font-bold text-primary">25.86%</p>
+                  <p className="text-muted-foreground text-sm mt-2">That's the literacy rate for women.</p>
                 </CardContent>
               </Card>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-6 rounded-2xl bg-muted/50">
-                  <p className="text-4xl font-bold text-primary mb-1">55.06%</p>
-                  <p className="text-muted-foreground text-sm">Male Literacy</p>
+                  <p className="text-4xl font-bold text-primary mb-1">55%</p>
+                  <p className="text-muted-foreground text-sm">For Men</p>
                 </div>
                 <div className="text-center p-6 rounded-2xl bg-muted/50">
-                  <p className="text-4xl font-bold text-primary mb-1">25.86%</p>
-                  <p className="text-muted-foreground text-sm">Female Literacy</p>
+                  <p className="text-4xl font-bold text-primary mb-1">26%</p>
+                  <p className="text-muted-foreground text-sm">For Women</p>
                 </div>
               </div>
             </div>
@@ -130,27 +134,27 @@ export default function AboutPage() {
             {[
               {
                 icon: BookOpen,
-                title: "Education Crisis",
+                title: "Education is Scattered",
                 description:
-                  "Schools exist, but distance and lack of trained teachers make attendance unpredictable. Many children walk several kilometers each way.",
+                  "Schools exist on paper, but many kids walk 5+ kilometers just to get there. Teachers don't always show up. By the time lunch comes around, their stomachs are already growling.",
               },
               {
                 icon: Heart,
-                title: "Food Insecurity",
+                title: "Hunger is Daily",
                 description:
-                  "Meals are often sparse and repetitive. For many children, hunger is a constant companion, shaping their ability to concentrate and learn.",
+                  "Meals in these families are repetitive and sparse. Some kids come to school hungry. It's hard to learn math when you're thinking about when you'll eat.",
               },
               {
                 icon: Globe,
-                title: "Healthcare Gap",
+                title: "Healthcare is Distant",
                 description:
-                  "No hospitals or clinics within the hills. Any medical emergency requires hours of travel to Purulia town.",
+                  "When someone gets sick, the nearest hospital is hours away by foot or bumpy roads. Many issues go untreated simply because help is too far.",
               },
               {
                 icon: Users,
-                title: "Girl's Barriers",
+                title: "Girls Face Extra Barriers",
                 description:
-                  "Girls are often expected to help with household work or care for siblings, interrupting schooling and limiting opportunities.",
+                  "Girls are often kept home to help with housework or care for siblings. Even when they can attend school, they face pressure to drop out.",
               },
             ].map((item, index) => (
               <Card key={index} className="border-0 shadow-lg hover-lift">
@@ -173,21 +177,22 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Communities</span>
-                <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-8 leading-tight">The Santhal & Munda Tribes</h2>
+                <span className="text-primary font-medium text-sm uppercase tracking-wider">The People</span>
+                <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-8 leading-tight">The Santhal and Munda Tribes</h2>
               </div>
               <div className="space-y-6 font-serif text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  The Santhal and Munda tribes of Purulia carry centuries of heritage in their songs, their
-                  craftsmanship, their rhythms, and their collective spirit. Their culture is rich, layered, and deeply
-                  connected to the land.
+                  The Santhal and Munda communities have lived in these hills for generations. They have their own
+                  languages, music, art, and traditions. They're strong, warm-hearted people who welcome us into their
+                  lives.
                 </p>
                 <p>
-                  Despite this vibrancy, generations have been denied access to education, healthcare, and steady income
-                  simply because of their geography and identity.
+                  But for too long, they've been left out of opportunities. Not because they're not capable — they're
+                  incredibly capable — but because of where they were born and who they were born as.
                 </p>
                 <p className="text-primary font-semibold">
-                  Working with them is an honour. They welcome us with open hearts and learn with unstoppable eagerness.
+                  Working with these communities is an honor. Their kids are bright, eager, and hungry to learn — in
+                  both senses of the word.
                 </p>
               </div>
             </div>
@@ -202,39 +207,42 @@ export default function AboutPage() {
       <section className="py-32 bg-background">
         <div className="fluid-container">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Purpose</span>
-            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Why We Teach</h2>
-            <p className="text-xl text-muted-foreground font-serif">Their dreams aren't lost. They're waiting.</p>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Why It Matters</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">What We Believe In</h2>
+            <p className="text-xl text-muted-foreground font-serif">One child's opportunity changes everything.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               {
                 number: "01",
-                title: "Learning Breaks Patterns",
+                title: "Books Break Cycles",
                 description:
-                  "A single lesson becomes an inheritance. When a child learns to read, they learn to choose.",
+                  "When a child learns to read, they learn to choose their own future. It's that simple and that powerful.",
               },
               {
                 number: "02",
-                title: "Girls Deserve More",
-                description: "Every girl who sits with us becomes a new possibility and a reminder that change begins.",
+                title: "Girls Deserve Futures",
+                description:
+                  "Every girl who walks into our classroom becomes a possibility. She becomes proof that things can be different.",
               },
               {
                 number: "03",
-                title: "Hunger Shouldn't Decide",
-                description: "A warm lunch becomes the bridge between survival and schooling.",
+                title: "Full Bellies, Open Minds",
+                description:
+                  "A warm meal isn't charity. It's the baseline for learning. Kids need food to focus, to play, to be kids.",
               },
               {
                 number: "04",
-                title: "Staff Carry Forward",
+                title: "Local Leaders",
                 description:
-                  "Ground staff teach with patience, showing children what strength rooted in humility looks like.",
+                  "Our local team isn't just staff — they're teachers, mentors, and role models who show kids what strength looks like.",
               },
               {
                 number: "05",
                 title: "Hope is a Right",
-                description: "Every child deserves to imagine tomorrow. Every child deserves to dream without apology.",
+                description:
+                  "Every child, no matter where they're born or who they're born to, deserves to dream. To hope. To believe in tomorrow.",
               },
             ].map((item) => (
               <div key={item.number} className="group">
@@ -249,17 +257,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Initiatives */}
-      {/* Initiatives section remains unchanged for this example */}
-
-      {/* Impact */}
-      {/* Impact section remains unchanged for this example */}
-
       <section className="py-32 bg-primary text-primary-foreground">
         <div className="fluid-container text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Join our mission</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Ready to Make a Difference?</h2>
           <p className="text-xl font-serif opacity-90 max-w-2xl mx-auto mb-12">
-            Every contribution, no matter the size, helps us reach more children and create lasting change.
+            Whether you can donate, volunteer, or just share our story — you have the power to change a child's life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary" className="rounded-full h-14 px-8 text-base">

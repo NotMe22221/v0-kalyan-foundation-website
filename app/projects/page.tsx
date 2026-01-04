@@ -16,21 +16,24 @@ export default function ProjectsPage() {
   const themes = [
     {
       icon: BookOpen,
-      title: "Education",
-      description: "Building schools, providing learning materials, and creating safe spaces for quality education.",
-      items: ["Anupuma School establishment", "Learning materials distribution", "Teacher training programs"],
+      title: "Learning",
+      description:
+        "We're building schools where kids actually want to go. Places with real teaching, real resources, and real opportunity.",
+      items: ["Running Anupuma School", "Providing books and supplies", "Training community teachers"],
     },
     {
       icon: Stethoscope,
-      title: "Health",
-      description: "Ensuring children receive nutritious meals and basic healthcare to support their growth.",
-      items: ["Daily nutritious meals program", "Health awareness sessions", "Basic healthcare access"],
+      title: "Nourishment",
+      description:
+        "Every child comes to school hungry. We make sure they leave with a full belly and the energy to learn and play.",
+      items: ["Daily hot meals", "Health check-ups", "Basic health education"],
     },
     {
       icon: Leaf,
       title: "Environment",
-      description: "Teaching environmental awareness and sustainable practices for a better future.",
-      items: ["Environmental education", "Sustainable building practices", "Community clean-up initiatives"],
+      description:
+        "We teach kids to care for their land while learning about sustainability and nature. It's education that connects to their world.",
+      items: ["Environmental classes", "Building green", "Community clean-ups"],
     },
   ]
 
@@ -46,14 +49,14 @@ export default function ProjectsPage() {
         <div className="relative z-10 fluid-container py-40">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
-              Our Work
+              What We Do
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">
-              Creating lasting <span className="text-primary">change</span> through education
+              How We're Making Change Real
             </h1>
             <p className="text-xl text-muted-foreground font-serif leading-relaxed">
-              From humble beginnings to transformative impact — explore our initiatives that are changing lives in
-              Purulia.
+              From school buildings to daily meals, here's how we're transforming lives in Purulia — one child, one day,
+              one dream at a time.
             </p>
           </div>
         </div>
@@ -62,8 +65,8 @@ export default function ProjectsPage() {
       <section className="py-32 bg-muted/30">
         <div className="fluid-container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">Focus Areas</span>
-            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Projects by Theme</h2>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Focus</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Three Things Kids Really Need</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -94,26 +97,36 @@ export default function ProjectsPage() {
         <div className="fluid-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-primary font-medium text-sm uppercase tracking-wider">Flagship Project</span>
-              <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-8 leading-tight">Anupuma School</h2>
+              <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Main School</span>
+              <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-8 leading-tight">
+                Anupuma School: Where Dreams Are Born
+              </h2>
               <p className="text-xl text-muted-foreground font-serif leading-relaxed mb-6">
-                Our flagship project transforming a small hut into a beacon of hope and learning for tribal children in
-                Purulia.
+                It started as one small hut. Today, Anupuma is a thriving school where over 50 children come every day
+                to learn, play, eat, and belong.
               </p>
               <p className="text-muted-foreground font-serif leading-relaxed mb-8">
-                Today, the school features outdoor classrooms with thatched roofs, a dining area where children receive
-                nutritious meals, and a safe environment where learning comes alive.
+                You'll find outdoor classrooms with thatched roofs, a dining area where kids eat real, nutritious food
+                together, and teachers who actually show up because they believe in what they're doing.
               </p>
 
               <div className="space-y-4">
                 {[
                   {
                     icon: School,
-                    title: "Quality Education Access",
-                    desc: "Structured learning programs for children",
+                    title: "Real Education",
+                    desc: "Quality teaching, real resources, and classrooms where learning happens",
                   },
-                  { icon: Utensils, title: "Nutritious Meals", desc: "Daily meals to fuel learning and growth" },
-                  { icon: Users, title: "Community Engagement", desc: "Building relationships with families" },
+                  {
+                    icon: Utensils,
+                    title: "Daily Meals",
+                    desc: "Hot, nutritious food so kids can learn with full bellies and clear minds",
+                  },
+                  {
+                    icon: Users,
+                    title: "Safe Community",
+                    desc: "A place where kids feel welcome, supported, and part of something bigger",
+                  },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4 p-4 rounded-2xl bg-muted/50">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -149,8 +162,8 @@ export default function ProjectsPage() {
       <section className="py-32 bg-muted/30">
         <div className="fluid-container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">Coming Soon</span>
-            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Upcoming Initiatives</h2>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Coming Next</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">What's Next: Big Plans for the Future</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -159,13 +172,13 @@ export default function ProjectsPage() {
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <BookOpen className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Digital Literacy Program</h3>
+                <h3 className="text-2xl font-bold mb-4">Tech and Digital Skills</h3>
                 <p className="text-lg font-serif text-muted-foreground leading-relaxed mb-4">
-                  Introducing basic computer skills and digital education to prepare children for the modern world and
-                  bridge the digital divide.
+                  Kids in rural areas shouldn't be left behind just because of where they live. We're bringing basic
+                  computer skills and digital literacy to level the playing field.
                 </p>
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                  Planning Phase
+                  In the Works
                 </span>
               </CardContent>
             </Card>
@@ -175,13 +188,13 @@ export default function ProjectsPage() {
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <Users className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Girl Education Initiative</h3>
+                <h3 className="text-2xl font-bold mb-4">Girls First Initiative</h3>
                 <p className="text-lg font-serif text-muted-foreground leading-relaxed mb-4">
-                  A focused program to encourage and support girl education in tribal communities, addressing cultural
-                  barriers and providing mentorship.
+                  We're doubling down on girls' education — because girls who learn become women who lead. We're
+                  creating mentorship, removing barriers, and changing minds.
                 </p>
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                  Development Phase
+                  Being Designed
                 </span>
               </CardContent>
             </Card>
@@ -191,15 +204,15 @@ export default function ProjectsPage() {
 
       <section className="py-32 bg-primary text-primary-foreground">
         <div className="fluid-container text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Help us expand our impact</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Help Us Do More</h2>
           <p className="text-xl font-serif opacity-90 max-w-2xl mx-auto mb-12">
-            Your support can help us reach more children, build more schools, and create more opportunities for
-            education in rural India.
+            More schools. More kids. More futures. With your support, we can reach beyond Purulia and help even more
+            children find their path.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary" className="rounded-full h-14 px-8 text-base">
               <Link href="/get-involved" className="flex items-center gap-2">
-                Volunteer with Us
+                Start Contributing
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
