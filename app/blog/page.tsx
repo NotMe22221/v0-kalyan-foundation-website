@@ -5,7 +5,10 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { getBlogPosts } from "@/lib/blog-posts"
+import { BookOpen, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -20,85 +23,103 @@ export default function BlogPage() {
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-16 md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">Our Stories</h1>
-              <p className="text-lg md:text-xl opacity-90">
-                Updates, impact stories, and volunteer experiences from the Kalyan Foundation
+        <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute top-20 right-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 left-20 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl" />
+          </div>
+          <div className="relative z-10 fluid-container py-40">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+                <BookOpen className="h-4 w-4" />
+                Stories
+              </span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">
+                Our <span className="text-primary">Stories</span>
+              </h1>
+              <p className="text-xl text-muted-foreground font-serif leading-relaxed">
+                Updates, impact stories, and volunteer experiences from the Kalyan Foundation.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Category Filter */}
-        <section className="py-8 border-b">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
+        <section className="py-8 border-b border-border">
+          <div className="fluid-container">
+            <div className="flex flex-wrap gap-2 justify-center">
               {categories.map((category) => (
-                <Button
+                <button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category)}
-                  className="text-sm md:text-base"
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  }`}
                 >
                   {category}
-                </Button>
+                </button>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Blog Posts Grid */}
-        <section className="py-12 md:py-20">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="py-20">
+          <div className="fluid-container">
             {filteredPosts.length === 0 ? (
-              <div className="text-center py-12 md:py-20">
-                <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4 text-primary">No Stories Yet</h2>
-                <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
-                  Check back soon for updates and stories from our foundation.
+              <div className="text-center py-20">
+                <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
+                  <BookOpen className="h-10 w-10 text-muted-foreground" />
+                </div>
+                <h2 className="text-3xl font-bold mb-4">No Stories Yet</h2>
+                <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto font-serif">
+                  Check back soon for updates and inspiring stories from our foundation.
                 </p>
-                <Button asChild size="lg">
-                  <Link href="/get-involved">Get Involved</Link>
+                <Button asChild size="lg" className="rounded-full">
+                  <Link href="/get-involved" className="flex items-center gap-2">
+                    Get Involved
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </Button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredPosts.map((post) => (
-                  <article
-                    key={post.slug}
-                    className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                  <Card key={post.slug} className="border-0 shadow-lg hover-lift overflow-hidden group">
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
                         src={post.image || "/placeholder.svg"}
                         alt={post.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
-                    <div className="p-4 md:p-6">
-                      <div className="flex items-center gap-3 text-xs md:text-sm text-muted-foreground mb-3">
-                        <span className="bg-primary/10 text-primary px-2 md:px-3 py-1 rounded-full">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
                           {post.category}
                         </span>
-                        <span>{post.readTime}</span>
+                        <span className="text-xs text-muted-foreground">{post.readTime}</span>
                       </div>
-                      <h3 className="font-serif text-xl md:text-2xl font-bold mb-2 md:mb-3 text-balance">
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-sm md:text-base text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
+                      <p className="text-muted-foreground font-serif text-sm mb-4 line-clamp-2">{post.excerpt}</p>
                       <div className="flex items-center justify-between">
-                        <div className="text-xs md:text-sm text-muted-foreground">
+                        <div className="text-xs text-muted-foreground">
                           <p className="font-medium">{post.author}</p>
                           <p>{post.date}</p>
                         </div>
-                        <Button asChild variant="ghost" className="text-primary">
-                          <Link href={`/blog/${post.slug}`}>Read More →</Link>
-                        </Button>
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="text-primary text-sm font-medium flex items-center gap-1 group/link"
+                        >
+                          Read More
+                          <ArrowRight className="h-3 w-3 transition-transform group-hover/link:translate-x-1" />
+                        </Link>
                       </div>
-                    </div>
-                  </article>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             )}

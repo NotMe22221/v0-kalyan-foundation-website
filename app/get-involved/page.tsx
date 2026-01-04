@@ -1,18 +1,17 @@
 "use client"
 
 import type React from "react"
-
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Heart, Users, Package, Share2, Globe, Info } from "lucide-react"
+import { Heart, Users, Package, Share2, Globe, Info, ArrowRight } from "lucide-react"
 import { useState } from "react"
-import Head from "next/head"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function GetInvolvedPage() {
   const [formData, setFormData] = useState({
@@ -24,208 +23,171 @@ export default function GetInvolvedPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
     console.log("Form submitted:", formData)
   }
 
+  const ways = [
+    {
+      icon: Heart,
+      title: "Donate",
+      description: "Your financial contribution helps us provide education, meals, and resources.",
+    },
+    {
+      icon: Users,
+      title: "Volunteer",
+      description: "Share your time and skills to teach, mentor, or support our programs.",
+    },
+    {
+      icon: Package,
+      title: "Send Supplies",
+      description: "Donate books, stationery, educational materials, or other supplies.",
+    },
+    { icon: Share2, title: "Share Our Story", description: "Help us reach more supporters by sharing our mission." },
+  ]
+
   return (
-    <>
-      <Head>
-        <title>Get Involved - Kalyan Foundation</title>
-        <meta
-          name="description"
-          content="Join Kalyan Foundation in transforming lives through education. Donate, volunteer, or partner with us to support children in rural India."
-        />
-        <meta
-          name="keywords"
-          content="donate, volunteer, support education, NGO India, Kalyan Foundation, help children"
-        />
-      </Head>
-      <div className="min-h-screen">
-        <Header />
+    <div className="min-h-screen">
+      <Header />
 
-        {/* Hero Section */}
-        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden mt-20">
-          <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-          <div className="relative z-10 text-center px-4">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-balance">Get Involved</h1>
-            <p className="text-xl text-muted-foreground font-serif">Join us in transforming lives through education</p>
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 right-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-20 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 fluid-container py-40">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+              <Heart className="h-4 w-4" />
+              Get Involved
+            </span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">
+              Join us in transforming <span className="text-primary">lives</span>
+            </h1>
+            <p className="text-xl text-muted-foreground font-serif leading-relaxed">
+              Every contribution, no matter the size, makes a real difference in the lives of children in Purulia.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Ways to Help */}
-        <section className="py-20 px-4 bg-background">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-balance">How You Can Help</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="border-2 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Heart className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>Donate</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-serif text-muted-foreground text-sm leading-relaxed">
-                    Your financial contribution helps us provide education, meals, and resources to children in need.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Users className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>Volunteer</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-serif text-muted-foreground text-sm leading-relaxed">
-                    Share your time and skills to teach, mentor, or support our programs both on-site and remotely.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Package className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>Send Supplies</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-serif text-muted-foreground text-sm leading-relaxed">
-                    Donate books, stationery, educational materials, or other supplies that help children learn.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Share2 className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>Share Our Story</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-serif text-muted-foreground text-sm leading-relaxed">
-                    Help us reach more supporters by sharing our mission on social media and with your network.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+      <section className="py-20 bg-background">
+        <div className="fluid-container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Make an Impact</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">How you can help</h2>
           </div>
-        </section>
 
-        {/* Donation Section */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Make a Donation</h2>
-              <p className="text-lg font-serif text-muted-foreground">
-                Every contribution, no matter the size, makes a real difference
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Indian Donations - UPI */}
-              <Card className="border-2">
-                <CardHeader className="text-center pb-4">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Heart className="h-6 w-6 text-primary" />
-                    <CardTitle>Donate from India</CardTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {ways.map((way, index) => (
+              <Card key={index} className="border-0 shadow-lg hover-lift">
+                <CardContent className="p-8 text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <way.icon className="h-7 w-7 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground font-serif">Via UPI</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-center">
-                    <div className="bg-white rounded-lg p-4 mb-4 inline-block">
-                      <Image
-                        src="/images/whatsapp-20image-202025-11-28-20at-2007.jpg"
-                        alt="Kalyan Foundation BHIM UPI QR Code - Kotak Mahindra Bank"
-                        width={280}
-                        height={350}
-                        className="mx-auto rounded-lg"
-                      />
-                    </div>
-                    <div className="bg-primary/10 rounded-lg p-4 mb-4">
-                      <p className="text-sm text-muted-foreground mb-2">UPI ID</p>
-                      <p className="text-base md:text-lg font-mono font-semibold text-primary break-all">
-                        0790656A0117730.bqr@kotak
-                      </p>
-                    </div>
-                    <p className="text-sm font-serif text-muted-foreground">
-                      Scan the QR code or use the UPI ID above to make your donation. All contributions go directly to
-                      supporting our educational programs.
+                  <h3 className="text-xl font-bold mb-3">{way.title}</h3>
+                  <p className="font-serif text-muted-foreground text-sm leading-relaxed">{way.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/30">
+        <div className="fluid-container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Support Us</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Make a Donation</h2>
+            <p className="text-lg font-serif text-muted-foreground">
+              Every contribution, no matter the size, makes a real difference
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* India UPI */}
+            <Card className="border-0 shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Heart className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">Donate from India</h3>
+                    <p className="text-sm text-muted-foreground">Via UPI</p>
+                  </div>
+                </div>
+                <div className="flex justify-center mb-6">
+                  <div className="bg-white rounded-2xl p-4 shadow-inner">
+                    <Image
+                      src="/images/whatsapp-20image-202025-11-28-20at-2007.jpg"
+                      alt="UPI QR Code"
+                      width={220}
+                      height={280}
+                      className="rounded-lg"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 rounded-xl bg-muted text-center">
+                  <p className="text-xs text-muted-foreground mb-1">UPI ID</p>
+                  <p className="font-mono font-semibold text-primary">0790656A0117730.bqr@kotak</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* International PayPal */}
+            <Card className="border-0 shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Globe className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">International Donations</h3>
+                    <p className="text-sm text-muted-foreground">Via PayPal</p>
+                  </div>
+                </div>
+                <div className="flex justify-center mb-6">
+                  <div className="bg-muted rounded-2xl p-4">
+                    <Image
+                      src="/images/whatsapp-20image-202025-11-28-20at-2005.jpg"
+                      alt="PayPal QR Code"
+                      width={180}
+                      height={180}
+                      className="rounded-lg"
+                    />
+                  </div>
+                </div>
+                <p className="text-center font-mono text-sm font-semibold text-primary mb-4">
+                  Sanjanabhoir17@gmail.com
+                </p>
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                  <div className="flex items-start gap-2">
+                    <Info className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs text-amber-800 leading-relaxed">
+                      The PayPal displays Sanjana Bhoir's name as we're currently not FCRA registered. Every donation is
+                      accounted for and directed entirely toward Kalyan Foundation's initiatives.
                     </p>
                   </div>
-                </CardContent>
-              </Card>
-
-              {/* International Donations - PayPal */}
-              <Card className="border-2">
-                <CardHeader className="text-center pb-4">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Globe className="h-6 w-6 text-primary" />
-                    <CardTitle>International Donations</CardTitle>
-                  </div>
-                  <p className="text-sm text-muted-foreground font-serif">Via PayPal</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-center">
-                    <div className="bg-primary/10 rounded-lg p-4 mb-4">
-                      <Image
-                        src="/images/whatsapp-20image-202025-11-28-20at-2005.jpg"
-                        alt="PayPal QR Code for international donations"
-                        width={200}
-                        height={200}
-                        className="mx-auto rounded-lg"
-                      />
-                    </div>
-                    <p className="text-sm font-mono font-semibold text-primary mb-4">Sanjanabhoir17@gmail.com</p>
-
-                    {/* Important Notice */}
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-left">
-                      <div className="flex items-start gap-2">
-                        <Info className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                        <p className="text-xs text-amber-800 leading-relaxed">
-                          If you notice that the PayPal page displays the name Sanjana Bhoir instead of Kalyan
-                          Foundation, there's no need to worry. As a small, developing NGO based in India, we are
-                          currently not eligible to receive international donations directly, since this requires formal
-                          FCRA registration and an annual income threshold that we have not yet reached. Until we meet
-                          those criteria, this supported account is the legally compliant and fully transparent way for
-                          us to accept contributions from our international well-wishers. Every donation received
-                          through this secure channel is accounted for and directed entirely toward Kalyan Foundation's
-                          initiatives.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Other Ways to Donate */}
-            <Card className="border-2 mt-8">
-              <CardContent className="pt-8">
-                <h3 className="text-xl font-bold mb-4 text-center">Other Ways to Donate</h3>
-                <div className="space-y-4 text-center">
-                  <p className="font-serif text-muted-foreground">
-                    For bank transfers, sponsorships, or to discuss larger contributions, please contact us directly.
-                  </p>
-                  <Button asChild variant="outline">
-                    <a href="#contact-form">Contact Us</a>
-                  </Button>
                 </div>
               </CardContent>
             </Card>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Volunteer Form */}
-        <section id="contact-form" className="py-20 px-4 bg-background">
+      <section className="py-20 bg-background">
+        <div className="fluid-container">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Volunteer with Us</h2>
+              <span className="text-primary font-medium text-sm uppercase tracking-wider">Join Our Team</span>
+              <h2 className="text-4xl font-bold mt-4 mb-4">Volunteer with Us</h2>
               <p className="text-lg font-serif text-muted-foreground">
                 Fill out the form below and we'll get in touch with you
               </p>
             </div>
 
-            <Card className="border-2">
-              <CardContent className="pt-8">
+            <Card className="border-0 shadow-xl">
+              <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
@@ -235,9 +197,9 @@ export default function GetInvolvedPage() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Enter your full name"
+                      className="rounded-xl h-12"
                     />
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address *</Label>
                     <Input
@@ -247,9 +209,9 @@ export default function GetInvolvedPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your.email@example.com"
+                      className="rounded-xl h-12"
                     />
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
                     <Input
@@ -258,46 +220,47 @@ export default function GetInvolvedPage() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 XXXXX XXXXX"
+                      className="rounded-xl h-12"
                     />
                   </div>
-
                   <div className="space-y-2">
-                    <Label htmlFor="message">Tell us about yourself and how you'd like to help *</Label>
+                    <Label htmlFor="message">Tell us how you'd like to help *</Label>
                     <Textarea
                       id="message"
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Share your skills, availability, and what motivates you to volunteer..."
-                      rows={6}
+                      placeholder="Share your skills, availability, and what motivates you..."
+                      rows={5}
+                      className="rounded-xl"
                     />
                   </div>
-
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button type="submit" size="lg" className="w-full rounded-full h-14">
                     Submit Application
                   </Button>
                 </form>
               </CardContent>
             </Card>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Partner Section */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">Partner with Us</h2>
-            <p className="text-lg font-serif text-muted-foreground leading-relaxed mb-8">
-              Are you a brand, institution, or organization interested in supporting our mission? We welcome
-              partnerships that can help us expand our reach and impact.
-            </p>
-            <Button asChild size="lg">
-              <a href="/contact">Get in Touch</a>
-            </Button>
-          </div>
-        </section>
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="fluid-container text-center">
+          <h2 className="text-4xl font-bold mb-6">Partner with Us</h2>
+          <p className="text-xl font-serif opacity-90 max-w-2xl mx-auto mb-10">
+            Are you a brand, institution, or organization interested in supporting our mission? We welcome partnerships.
+          </p>
+          <Button asChild size="lg" variant="secondary" className="rounded-full h-14 px-8">
+            <Link href="/contact" className="flex items-center gap-2">
+              Get in Touch
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </section>
 
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   )
 }

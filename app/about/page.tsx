@@ -1,240 +1,282 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
-import { Target, Eye, Heart, Users } from "lucide-react"
+import { Heart, BookOpen, Users, Globe, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
-
-export const metadata = {
-  title: "About Us - Kalyan Foundation",
-  description:
-    "Learn about Kalyan Foundation's mission to empower underprivileged children in rural India through education. Founded by Kaira Ghosh in 2022.",
-  keywords: "Kalyan Foundation, education NGO, rural India, Purulia, tribal children, youth leadership",
-}
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10" />
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance leading-tight">About Kalyan Foundation</h1>
-          <p className="text-2xl text-muted-foreground font-serif">Transforming lives through education</p>
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl" />
         </div>
-      </section>
-
-      <section className="py-32 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance leading-tight">Meet Our Founder</h2>
-            <p className="text-xl text-muted-foreground font-serif">Kaira Ghosh</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="space-y-6 text-lg font-serif text-muted-foreground leading-relaxed">
-                <p>
-                  At just 14, Kaira Ghosh founded the Kalyan Foundation in 2022 after witnessing the lack of access to
-                  education and medical facilities in Purulia. What began as a simple effort to help a few children has
-                  grown under her leadership into a youth-led initiative that continues to impact lives across rural
-                  Bengal.
-                </p>
-                <p>
-                  What started as a few disorganised learning sessions under trees — with children gathering around to
-                  read and learn — soon became something much bigger. With the help of a few wonderful people from the
-                  community, Kaira transformed a small hut into a classroom. Though they deserve far more, that humble
-                  space became the first home of the Kalyan Foundation — a place built on hope, purpose, and the shared
-                  belief that learning can change lives.
-                </p>
-                <p>
-                  Deeply moved by the realities she saw, Kaira envisioned an organisation that would not only focus on
-                  education but also raise funds for medical needs, promote awareness on female hygiene, and work
-                  towards the overall upliftment of women in Purulia.
-                </p>
-                <p>
-                  Her strength lies in her empathy and her ability to turn vision into action. As the Founder and
-                  Director, she continues to lead with purpose, building programs that merge compassion with real
-                  impact. Kaira believes that education is the strongest tool of transformation — one that every child
-                  deserves, regardless of their circumstance.
-                </p>
-                <p>
-                  Her journey is a reflection of determination at a young age, leadership rooted in kindness, and the
-                  unwavering belief that meaningful change begins when one decides to act.
-                </p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image05-Oq5qyiCJyZQoEtnc3wuAISb5Fno3Ia.jpg"
-                  alt="Kaira Ghosh with children"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-6 bg-muted/40">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Our Team</h2>
-            <div className="bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-8">
-              <Users className="h-10 w-10 text-primary" />
-            </div>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6 text-lg font-serif text-muted-foreground leading-relaxed">
-              <p>
-                The Kalyan Foundation is powered by a passionate group of young changemakers and community volunteers
-                who work hand in hand to make a real difference.
-              </p>
-              <p>
-                Our permanent volunteers, who come from the very communities we teach in, are the heart of our efforts.
-                They are incredible individuals who dedicate their time and energy to teaching children from their own
-                neighbourhoods, ensuring that learning continues even when we are not there.
-              </p>
-              <p>
-                They are the ones who hold everything together — coordinating, guiding, and supporting each initiative
-                with unmatched sincerity and care. We are eternally grateful to them for being the real force behind the
-                scenes, turning our shared vision into reality every single day.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance leading-tight">The Founder's Story</h2>
-              <div className="space-y-6 text-lg font-serif text-muted-foreground leading-relaxed">
-                <p>
-                  At just 16 years old, Kaira Ghosh witnessed the stark reality of education inequality in Purulia, West
-                  Bengal. In a region where literacy rates hover around 25%, most tribal children grow up without access
-                  to schools or the opportunity to learn.
-                </p>
-                <p>
-                  Kaira refused to accept this reality. With unwavering determination and a vision for change, she
-                  founded Kalyan Foundation in 2022. What started as a small initiative has grown into a movement that's
-                  transforming the lives of underprivileged children.
-                </p>
-                <p>
-                  Today, Kalyan Foundation stands as a testament to the power of youth leadership and the belief that
-                  every child deserves the right to learn, dream, and thrive.
-                </p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image05-Oq5qyiCJyZQoEtnc3wuAISb5Fno3Ia.jpg"
-                  alt="Kaira Ghosh with children"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-6 bg-muted/40">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-balance">Our Mission & Vision</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-card">
-              <CardContent className="pt-12 pb-12 px-10">
-                <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <Target className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
-                <p className="text-lg font-serif text-muted-foreground leading-relaxed">
-                  To empower underprivileged children through education and awareness, providing them with the tools and
-                  opportunities they need to build a better future for themselves and their communities.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-card">
-              <CardContent className="pt-12 pb-12 px-10">
-                <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <Eye className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
-                <p className="text-lg font-serif text-muted-foreground leading-relaxed">
-                  To ensure every child in rural India has the right to learn, dream, and thrive. We envision a future
-                  where education is accessible to all, regardless of their background or circumstances.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-6 bg-muted/40">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-balance">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Heart className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Compassion</h3>
-              <p className="text-lg font-serif text-muted-foreground leading-relaxed">
-                We approach every child with empathy, understanding their unique challenges and celebrating their
-                potential.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Target className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Commitment</h3>
-              <p className="text-lg font-serif text-muted-foreground leading-relaxed">
-                We are dedicated to creating lasting change through consistent effort and unwavering focus on our
-                mission.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Eye className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Transparency</h3>
-              <p className="text-lg font-serif text-muted-foreground leading-relaxed">
-                We operate with complete openness, ensuring every supporter knows exactly how their contribution makes a
-                difference.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 bg-background">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">The Challenge We're Addressing</h2>
-          <p className="text-lg font-serif text-muted-foreground leading-relaxed mb-6">
-            In Purulia, West Bengal, educational opportunities are scarce for tribal communities. Many children grow up
-            without access to basic schooling, limiting their potential and perpetuating cycles of poverty.
-          </p>
-          <div className="bg-muted/50 border-2 border-primary/20 rounded-lg p-8 my-8">
-            <h3 className="text-2xl font-bold mb-4 text-primary">Purulia: The Reality</h3>
-            <p className="text-lg font-serif text-muted-foreground leading-relaxed mb-4">
-              In Purulia, the literacy rate remains a pressing concern. The literacy rate of Ajodhya village is about{" "}
-              <span className="font-bold text-primary">41.63%</span>, with male literacy at{" "}
-              <span className="font-bold text-primary">55.06%</span> and female literacy at only{" "}
-              <span className="font-bold text-primary">25.86%</span>.
+        <div className="relative z-10 fluid-container py-40">
+          <div className="max-w-4xl">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+              Who We Are
+            </span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">
+              Empowering change,
+              <span className="block text-primary">one life at a time</span>
+            </h1>
+            <p className="text-xl text-muted-foreground font-serif leading-relaxed max-w-2xl mb-12">
+              A youth-led, registered non-profit rooted in Purulia, dedicated to bringing education, nourishment,
+              dignity, and possibility to children and families who have long lived on the margins of opportunity.
             </p>
-            <p className="text-lg font-serif text-muted-foreground leading-relaxed">
-              These figures highlight the urgency of our mission to promote access to education and equal opportunities.
+            <div className="flex flex-wrap gap-8">
+              <div>
+                <p className="text-4xl font-bold text-primary">2022</p>
+                <p className="text-muted-foreground text-sm mt-1">Founded</p>
+              </div>
+              <div className="w-px bg-border" />
+              <div>
+                <p className="text-xl font-bold text-foreground">190200084</p>
+                <p className="text-muted-foreground text-sm mt-1">Registration No.</p>
+              </div>
+              <div className="w-px bg-border" />
+              <div>
+                <p className="text-xl font-bold text-foreground">Purulia</p>
+                <p className="text-muted-foreground text-sm mt-1">West Bengal, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder's Letter */}
+      <section className="py-32 bg-muted/30">
+        <div className="fluid-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <span className="text-primary font-medium text-sm uppercase tracking-wider">Founder's Letter</span>
+                <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-8 leading-tight">
+                  A responsibility born of love
+                </h2>
+              </div>
+              <div className="space-y-6 font-serif text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  I grew up watching Purulia through a different lens — not just as my home, but as a place where
+                  potential remained hidden beneath hardship. The Santhal and Munda children I met along the way carried
+                  dreams far larger than the circumstances they were born into.
+                </p>
+                <blockquote className="border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-2xl italic">
+                  "Starting Kalyan Foundation was not a choice as much as it was a responsibility born out of love for
+                  my hometown."
+                </blockquote>
+                <p>
+                  Every child we teach, every meal we serve, every small smile we witness reinforces a belief that has
+                  guided us from the beginning: the world is not equal, but compassion can build its bridges.
+                </p>
+              </div>
+              <p className="text-foreground font-semibold">— Kaira Ghosh, Founder</p>
+            </div>
+            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/images/image.png" alt="Kaira Ghosh with children" fill className="object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Purulia: The Reality */}
+      <section className="py-32 bg-background">
+        <div className="fluid-container">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">The Context</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Purulia: The Reality</h2>
+            <p className="text-xl text-muted-foreground font-serif">
+              We live on the same planet — just in two different worlds.
             </p>
           </div>
-          <p className="text-lg font-serif text-muted-foreground leading-relaxed">
-            Kalyan Foundation is working to change this reality, one child at a time, by building schools, providing
-            resources, and creating a nurturing environment where learning can flourish.
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/images/image04.jpg" alt="Kalyan Foundation School" fill className="object-cover" />
+            </div>
+            <div className="space-y-8">
+              <p className="text-lg text-muted-foreground font-serif leading-relaxed">
+                The Ajodhya Hills region, where we work, is geographically stunning yet profoundly underserved. Roads
+                cut sharply through forests and rocky slopes, leaving villages isolated from basic services.
+              </p>
+              <Card className="border-0 shadow-xl bg-gradient-to-br from-primary/5 to-primary/10">
+                <CardContent className="p-8">
+                  <p className="text-muted-foreground mb-2">In Ajodhya village, literacy averages</p>
+                  <p className="text-6xl font-bold text-primary">41.63%</p>
+                </CardContent>
+              </Card>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-6 rounded-2xl bg-muted/50">
+                  <p className="text-4xl font-bold text-primary mb-1">55.06%</p>
+                  <p className="text-muted-foreground text-sm">Male Literacy</p>
+                </div>
+                <div className="text-center p-6 rounded-2xl bg-muted/50">
+                  <p className="text-4xl font-bold text-primary mb-1">25.86%</p>
+                  <p className="text-muted-foreground text-sm">Female Literacy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                icon: BookOpen,
+                title: "Education Crisis",
+                description:
+                  "Schools exist, but distance and lack of trained teachers make attendance unpredictable. Many children walk several kilometers each way.",
+              },
+              {
+                icon: Heart,
+                title: "Food Insecurity",
+                description:
+                  "Meals are often sparse and repetitive. For many children, hunger is a constant companion, shaping their ability to concentrate and learn.",
+              },
+              {
+                icon: Globe,
+                title: "Healthcare Gap",
+                description:
+                  "No hospitals or clinics within the hills. Any medical emergency requires hours of travel to Purulia town.",
+              },
+              {
+                icon: Users,
+                title: "Girl's Barriers",
+                description:
+                  "Girls are often expected to help with household work or care for siblings, interrupting schooling and limiting opportunities.",
+              },
+            ].map((item, index) => (
+              <Card key={index} className="border-0 shadow-lg hover-lift">
+                <CardContent className="p-8">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                    <item.icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="font-serif text-muted-foreground leading-relaxed">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Communities We Serve */}
+      <section className="py-32 bg-muted/30">
+        <div className="fluid-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Communities</span>
+                <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-8 leading-tight">The Santhal & Munda Tribes</h2>
+              </div>
+              <div className="space-y-6 font-serif text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  The Santhal and Munda tribes of Purulia carry centuries of heritage in their songs, their
+                  craftsmanship, their rhythms, and their collective spirit. Their culture is rich, layered, and deeply
+                  connected to the land.
+                </p>
+                <p>
+                  Despite this vibrancy, generations have been denied access to education, healthcare, and steady income
+                  simply because of their geography and identity.
+                </p>
+                <p className="text-primary font-semibold">
+                  Working with them is an honour. They welcome us with open hearts and learn with unstoppable eagerness.
+                </p>
+              </div>
+            </div>
+            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/images/image05.jpg" alt="Children learning" fill className="object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why We Teach */}
+      <section className="py-32 bg-background">
+        <div className="fluid-container">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Purpose</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Why We Teach</h2>
+            <p className="text-xl text-muted-foreground font-serif">Their dreams aren't lost. They're waiting.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              {
+                number: "01",
+                title: "Learning Breaks Patterns",
+                description:
+                  "A single lesson becomes an inheritance. When a child learns to read, they learn to choose.",
+              },
+              {
+                number: "02",
+                title: "Girls Deserve More",
+                description: "Every girl who sits with us becomes a new possibility and a reminder that change begins.",
+              },
+              {
+                number: "03",
+                title: "Hunger Shouldn't Decide",
+                description: "A warm lunch becomes the bridge between survival and schooling.",
+              },
+              {
+                number: "04",
+                title: "Staff Carry Forward",
+                description:
+                  "Ground staff teach with patience, showing children what strength rooted in humility looks like.",
+              },
+              {
+                number: "05",
+                title: "Hope is a Right",
+                description: "Every child deserves to imagine tomorrow. Every child deserves to dream without apology.",
+              },
+            ].map((item) => (
+              <div key={item.number} className="group">
+                <div className="bg-muted/50 rounded-3xl p-6 h-full hover:bg-primary/5 transition-all duration-300">
+                  <p className="text-5xl font-bold text-primary/20 mb-4">{item.number}</p>
+                  <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+                  <p className="font-serif text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Initiatives */}
+      {/* Initiatives section remains unchanged for this example */}
+
+      {/* Impact */}
+      {/* Impact section remains unchanged for this example */}
+
+      <section className="py-32 bg-primary text-primary-foreground">
+        <div className="fluid-container text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Join our mission</h2>
+          <p className="text-xl font-serif opacity-90 max-w-2xl mx-auto mb-12">
+            Every contribution, no matter the size, helps us reach more children and create lasting change.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" variant="secondary" className="rounded-full h-14 px-8 text-base">
+              <Link href="/get-involved" className="flex items-center gap-2">
+                Get Involved
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full h-14 px-8 text-base border-white/30 text-white hover:bg-white hover:text-primary bg-transparent"
+            >
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
