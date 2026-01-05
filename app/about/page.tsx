@@ -257,6 +257,46 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* PDF Document Viewer Section */}
+      <section className="py-32 bg-muted/30">
+        <div className="fluid-container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Full Story</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6">Read Our "Who We Are" Document</h2>
+            <p className="text-xl text-muted-foreground font-serif">
+              Get the complete story of Kalyan Foundation, from our founder's journey to our vision for the future.
+            </p>
+          </div>
+
+          {/* PDF Viewer */}
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div className="aspect-video bg-muted/50 flex items-center justify-center">
+              <iframe
+                src="https://blobs.vusercontent.net/blob/who%20we%20are-compressed-k44pb4svMWqVl35l308KZ19sXR8NTN.pdf"
+                className="w-full h-full min-h-[600px]"
+                title="Who We Are - Kalyan Foundation"
+                style={{ border: "none" }}
+              />
+            </div>
+          </div>
+
+          {/* Download Link */}
+          <div className="flex justify-center mt-12">
+            <Button asChild size="lg" className="rounded-full h-14 px-8 text-base gap-2">
+              <a
+                href="https://blobs.vusercontent.net/blob/who%20we%20are-compressed-k44pb4svMWqVl35l308KZ19sXR8NTN.pdf"
+                download="Kalyan-Foundation-Who-We-Are.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ArrowRight className="h-5 w-5" />
+                Download Full PDF
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-32 bg-primary text-primary-foreground">
         <div className="fluid-container text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8">Ready to Make a Difference?</h2>
